@@ -8,7 +8,7 @@ import { CategoriaService } from "../categoria.service";
   styleUrls: ["./categoria-read.component.css"],
 })
 export class CategoriaReadComponent implements OnInit {
-  displayedColumns: string[] = ["id", "nome", "descricao", "acoes"];
+  displayedColumns: string[] = ["id", "nome", "descricao","livros" ,"acoes"];
 
   list_categorias: Categoria[] = [];
 
