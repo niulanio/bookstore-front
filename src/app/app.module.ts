@@ -22,6 +22,7 @@ import { CategoriaReadComponent } from "./components/views/categoria/categoria-r
 import { HttpClientModule } from "@angular/common/http";
 import { CategoriaCreateComponent } from "./components/views/categoria/categoria-create/categoria-create.component";
 import { FormsModule } from "@angular/forms";
+import { CategoriaDeleteComponent } from './components/views/categoria/categoria-delete/categoria-delete.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { FormsModule } from "@angular/forms";
     HomeComponent,
     CategoriaReadComponent,
     CategoriaCreateComponent,
+    CategoriaDeleteComponent,
   ],
   imports: [
     BrowserModule,
