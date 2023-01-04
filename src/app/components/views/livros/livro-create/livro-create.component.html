@@ -1,0 +1,32 @@
+<form>
+    <h1>CRIANDO UM NOVO LIVRO</h1>
+
+    <mat-form-field class="form">
+        <mat-label>Título</mat-label>
+        <input matInput [formControl]="titulo" required
+            [(ngModel)]="livro.titulo" type="text"
+            name="titulo" placeholder="Digite o título do livro"
+            maxlength="100">
+        <mat-error *ngIf="titulo.invalid">{{getMessageTitulo()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="form">
+        <mat-label>Nome do Autor</mat-label>
+        <input matInput [formControl]="nome_autor" required [(ngModel)]="livro.nome_autor" type="text"
+            name="nomeAutor"
+            placeholder="Digite o nome do Autor" maxlength="50">
+            <mat-error *ngIf="nome_autor.invalid">{{getMessageNomeAutor()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form">
+        <mat-label>Texto</mat-label>
+        <textarea matInput [formControl]="texto" required [(ngModel)]="livro.texto" type="text" name="texto"
+            placeholder="Digite o texto do livro" maxlength="2000000"></textarea>
+            <mat-error *ngIf="texto.invalid">{{getMessageTexto()}}</mat-error>
+    </mat-form-field>
+
+    <div class="buttons">
+        <button [disabled]="getMessageTexto() || getMessageNomeAutor() || getMessageTitulo()" (click)="create()" class="mat-elevation-z8" mat-stroked-button color="primary">SALVAR</button>
+        <button (click)="voltar()" class="mat-elevation-z8" mat-stroked-button
+            color="warn">CANCELAR</button>
+    </div>
+</form>
